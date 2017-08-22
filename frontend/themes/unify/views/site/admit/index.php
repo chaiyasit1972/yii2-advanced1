@@ -68,7 +68,24 @@ $baseUrl = $asset->baseUrl;
                                                           ]
                                                       );                   
                                     ?>
-                                 </li>                                           
+                                 </li>     
+                                 <li>
+                                    <?= !Yii::$app->user->isGuest?
+                                            Html::a('<i class="fa fa-arrow-right color-green"></i>
+                                                          2. รายงานสถานะของห้องพิเศษ (check ห้อง-เตียง พิเศษว่าง)',
+                                                          ['/admit/admit1-index']) : 
+                                            Html::a('<i class="fa fa-arrow-right color-green"></i>
+                                                          2. รายงานสถานะของห้องพิเศษ (check ห้อง-เตียง พิเศษว่าง)',
+                                                          ['site/modal'],
+                                                          [
+                                                                 'class' => 'xmodal',
+                                                                 'title' => 'เปิดดูข้อมูล',
+                                                                 'data-target' => '#vmodal',
+                                                                 'data-pjax' => '0',
+                                                          ]
+                                                      );                   
+                                    ?>
+                                 </li>                                        
                              </ul>
                       </li>                                                                       
             </ul>
